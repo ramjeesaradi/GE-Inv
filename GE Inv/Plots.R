@@ -5,7 +5,7 @@ library(caret)
 invD <- read.csv("Inventory-data.csv")
 
 invDAggr <-  aggregate(Available.Quantity*Unit.Cost ~Part.Number,invD,sum)
-
+abc <- ABCanalysis(invDAggr$`Available.Quantity * Unit.Cost`)
 t5parts <- invDAggr[order(invDAggr$`Available.Quantity * Unit.Cost`, decreasing = T)[1:5],"Part.Number"]
 
 # sd <- sqrt(var(invD$Available.Quantity))
